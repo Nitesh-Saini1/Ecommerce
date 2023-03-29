@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import SearchIcon from "@mui/icons-material/Search";
+import Stack from "@mui/material/Stack";
+import Badge from "@mui/material/Badge";
+import MailIcon from "@mui/icons-material/Mail";
+import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
 const Continer = styled.div`
   height: 60px;
   background-color: white;
@@ -34,9 +38,22 @@ const Input = styled.input`
 `;
 const Center = styled.div`
   flex: 1;
+  text-align: center;
+`;
+
+const Logo = styled.h1`
+  font-weight: bold;
 `;
 const Right = styled.div`
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`;
+const MenuItem = styled.div`
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 25px;
 `;
 const Navbar = () => {
   return (
@@ -46,11 +63,21 @@ const Navbar = () => {
           <Language>EN</Language>
           <SearchContainer>
             <Input />
-            <SearchIcon />
+            <SearchIcon style={{ color: "gray", fontSize: "16px" }} />
           </SearchContainer>
         </Left>
-        <Center>Center</Center>
-        <Right>Right</Right>
+        <Center>
+          <Logo>Nitesh.</Logo>
+        </Center>
+        <Right>
+          <MenuItem>REGISTER</MenuItem>
+          <MenuItem>SIGN IN</MenuItem>
+          <MenuItem>
+            <Badge color="secondary" badgeContent={0} showZero>
+              <ShoppingCartOutlined />
+            </Badge>
+          </MenuItem>
+        </Right>
       </Wrapper>
     </Continer>
   );
